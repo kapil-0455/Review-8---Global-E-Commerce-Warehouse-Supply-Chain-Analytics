@@ -269,7 +269,6 @@ SELECT DISTINCT ON (warehouse_id, product_id)
 FROM global_raw
 ORDER BY warehouse_id, product_id
 ON CONFLICT (warehouse_id, product_id) DO NOTHING;
-```
 
 -- create table orders
 CREATE TABLE orders (
@@ -386,7 +385,6 @@ SELECT
     line_discount,
     line_total
 FROM global_raw;
-```
 
 -- create table Payments
 CREATE TABLE payments (
