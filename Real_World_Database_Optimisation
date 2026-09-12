@@ -1,0 +1,35 @@
+Real-World Database Optimization Techniques
+---------------------------------------------------------------------------------
+
+Slow Inventory Search:
+If there are many products in different warehouses, finding the stock can take more time.
+
+Suggestion: We can use indexing to make the inventory search faster.
+---------------------------------------------------------------------------------
+
+Same Product Ordered by Many Customers
+Sometimes two customers may order the same product at the same time. This can create problems with the available stock.
+
+Suggestion: We can use transactions and locking so that the stock is updated correctly.
+---------------------------------------------------------------------------------
+
+
+Large Number of Orders
+When the number of orders increases, finding a customer's old orders may take more time.
+
+Suggestion: We can use indexes and show the orders in small pages instead of loading everything at once.
+---------------------------------------------------------------------------------
+
+
+Many Inventory Records
+Every sale, return, and stock update creates a new inventory record. After some time, there can be a lot of records.
+
+Suggestion: We can divide the data into smaller parts using partitioning to improve performance.
+---------------------------------------------------------------------------------
+
+
+Reports Take More Time
+Sales and inventory reports may take longer when the database has a lot of data.
+
+Suggestion: We can use materialized views for reports that are used frequently, so they can load faster.
+---------------------------------------------------------------------------------
