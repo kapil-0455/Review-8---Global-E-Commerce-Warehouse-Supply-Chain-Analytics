@@ -1,0 +1,87 @@
+CREATE TABLE global_raw (
+    customer_id VARCHAR(20),
+    customer_first_name VARCHAR(50),
+    customer_last_name VARCHAR(50),
+    customer_email VARCHAR(150),
+    customer_phone VARCHAR(30),
+    customer_street VARCHAR(200),
+    customer_city VARCHAR(100),
+    customer_state VARCHAR(100),
+    customer_postal_code VARCHAR(20),
+    customer_country VARCHAR(100),
+    customer_registration_date DATE,
+
+    order_id VARCHAR(20),
+    order_date TIMESTAMP,
+    order_status VARCHAR(30),
+    order_currency CHAR(3),
+    order_subtotal NUMERIC(14,2),
+    tax_amount NUMERIC(14,2),
+    shipping_cost NUMERIC(14,2),
+    discount_amount NUMERIC(14,2),
+    order_total NUMERIC(14,2),
+
+    order_item_id VARCHAR(20),
+    product_id VARCHAR(20),
+    sku VARCHAR(50),
+    product_name VARCHAR(200),
+    category_name VARCHAR(100),
+    product_weight_kg NUMERIC(10,2),
+    unit_price NUMERIC(14,2),
+    quantity INT,
+    line_discount NUMERIC(14,2),
+    line_total NUMERIC(14,2),
+
+    supplier_id VARCHAR(20),
+    supplier_name VARCHAR(150),
+    supplier_country VARCHAR(100),
+    supplier_rating NUMERIC(3,2),
+    supplier_price NUMERIC(14,2),
+    supplier_lead_time_days INT,
+
+    warehouse_id VARCHAR(20),
+    warehouse_name VARCHAR(150),
+    warehouse_city VARCHAR(100),
+    warehouse_state VARCHAR(100),
+    warehouse_country VARCHAR(100),
+    warehouse_capacity INT,
+
+    inventory_quantity_available INT,
+    inventory_quantity_reserved INT,
+    reorder_level INT,
+
+    payment_id VARCHAR(20),
+    payment_method VARCHAR(30),
+    payment_status VARCHAR(30),
+    payment_transaction_reference VARCHAR(100),
+    payment_date TIMESTAMP,
+
+    shipment_id VARCHAR(20),
+    tracking_number VARCHAR(100),
+    logistics_provider_id VARCHAR(20),
+    logistics_provider_name VARCHAR(100),
+    shipment_status VARCHAR(30),
+    dispatch_date TIMESTAMP,
+    expected_delivery_date TIMESTAMP,
+    actual_delivery_date TIMESTAMP,
+    tracking_location VARCHAR(200),
+    tracking_event_time TIMESTAMP,
+
+    return_id VARCHAR(20),
+    return_status VARCHAR(30),
+    return_reason VARCHAR(200),
+    return_quantity NUMERIC,
+    return_item_condition VARCHAR(30),
+    refund_amount NUMERIC(14,2),
+
+    price_country VARCHAR(100),
+    dynamic_price NUMERIC(14,2),
+    price_effective_from DATE,
+
+    inventory_transaction_type VARCHAR(30),
+    inventory_transaction_quantity INT,
+    inventory_transaction_date TIMESTAMP
+);
+
+
+\COPY global_raw FROM '/path_name/global_ecommerce_denormalized_3000.csv' WITH (FORMAT CSV, HEADER TRUE, DELIMITER ',');
